@@ -7,20 +7,20 @@ Module Module1
     Sub Main()
         Dim priority As String = ""
         Console.WriteLine("---------------------------")
-        Console.WriteLine("GOLEM PRIORITY CHECK V.0.8.1")
+        Console.WriteLine("  PRIORITY CHECK V.0.9.0   ")
         Console.WriteLine("---------------------------")
-        Console.WriteLine("Hello World!")
-        Console.WriteLine("What's the priority today?")
-        priority = Console.ReadLine()
+        Console.WriteLine("HELLO WORLD")
+        Console.WriteLine("WHAT'S THE PRIORITY TODAY")
+        priority = Console.ReadLine().ToUpper()
 
-	Dim todaySign = DateTime.Now.ToString("ddMMyyyy")
-        Console.WriteLine("Ok, you told me the priority is: " & priority)
+        Dim todaySign = DateTime.Now.ToString("ddMMyyyy")
+        Console.WriteLine("OK: " & priority)
         'TODO: Dump it to txt file in ddMMyyyy format
-        Dim outPath As String = "out_" & todaySign & ".txt"
+        Dim outPath As String = "OUT_" & todaySign & ".TXT"
         Using writer As new StreamWriter(outPath, append:=False)
-            writer.WriteLine(todaySign & " " & "priority is: " & priority)
+            writer.WriteLine(todaySign & " " & "PRIORITY IS: " & priority)
         End Using
-	Console.WriteLine("Dumped priority succesfully")
+        Console.WriteLine("")
         Console.ReadKey()
     End Sub
 
