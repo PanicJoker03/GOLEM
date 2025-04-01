@@ -2,26 +2,35 @@ Imports System
 Imports System.IO
 Imports Microsoft.VisualBasic
 
-
 Module Module1
-
-
     Sub Main()
-        Dim priority As String = ""
+        Dim priority_a As String = ""
+        Dim priority_b As String = ""
+        Dim priority_c As String = ""
+        
         Console.WriteLine("----------------------------")
-        Console.WriteLine("  LINKIUM KERNEL            ")
-        Console.WriteLine("  PRIORITIES CHECK V.0.10.0 ")
+        Console.WriteLine("  PRIORITIES CHECK V.1.0.1  ")
         Console.WriteLine("----------------------------")
         Console.WriteLine("HELLO WORLD")
-        Console.WriteLine("WHAT'S THE PRIORITY TODAY")
-        priority = Console.ReadLine().ToUpper()
+        Console.WriteLine("WHAT'S THE PRIORITY A TODAY:")
+        priority_a = Console.ReadLine().ToUpper()
+
+        Console.WriteLine("WHAT'S THE PRIORITY B TODAY:")
+        priority_b = Console.ReadLine().ToUpper()
+        
+        Console.WriteLine("WHAT'S THE PRIORITY C TODAY:")
+        priority_c = Console.ReadLine().ToUpper()
 
         Dim todaySign = DateTime.Now.ToString("ddMMyyyy")
-        Console.WriteLine("OK: " & priority)
+        Console.WriteLine("OK: " & priority_a)
+        Console.WriteLine("OK: " & priority_b)
+        Console.WriteLine("OK: " & priority_c)
         'TODO: Dump it to txt file in ddMMyyyy format
         Dim outPath As String = "OUT_" & todaySign & ".TXT"
         Using writer As New StreamWriter(outPath, append:=False)
-            writer.WriteLine(todaySign & " " & "PRIORITY IS: " & priority)
+            writer.WriteLine(todaySign & " " & "PRIORITY A IS: " & priority_a)
+            writer.WriteLine(todaySign & " " & "PRIORITY B IS: " & priority_b)
+            writer.WriteLine(todaySign & " " & "PRIORITY C IS: " & priority_c)
 
             Dim anotherTask As String = "n"
             While True
